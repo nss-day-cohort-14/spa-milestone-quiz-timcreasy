@@ -41,8 +41,14 @@ function descriptionInputEntered() {
   // Get currentCarCardDescription
   currentCarCardDescription = document.querySelector(".selected p");
 
-  // Bind description to descriptionInput value
-  currentCarCardDescription.innerHTML = document.getElementById("descriptionInput").value;
+  // If no car selected, send alert and clear input
+  if (currentCarCardDescription === null) {
+    alert("You must select a car to edit!");
+    document.getElementById("descriptionInput").value = "";
+  } else {
+    // Bind description to descriptionInput value
+    currentCarCardDescription.innerHTML = document.getElementById("descriptionInput").value;
+  }
 
 }
 
@@ -50,6 +56,12 @@ function submitButtonPressed() {
 
   // Prevent default behavior
   event.preventDefault();
+
+  // Clear descriptionInput field
+  document.getElementById("descriptionInput").value = "";
+
+  // Reset styling of all cards
+  CarLot.resetStyling();
 
 }
 

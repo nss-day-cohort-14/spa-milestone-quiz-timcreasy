@@ -38,10 +38,10 @@ function populatePage() {
     carCard.setAttribute('class', "carCard col-sm-4");
 
     // Add markup and data to carCard
-    carCard.innerHTML = `<h3>${currentCar.year}</h3>
+    carCard.innerHTML = `<h3 class="carYear">${currentCar.year}</h3>
                          <h2>${currentCar.make}</h2>
                          <h4>${currentCar.model}</h4>
-                         <h3>${currentCar.price}</h3>
+                         <h3>$${currentCar.price}</h3>
                          <h3>${currentCar.color}</h3>
                          <p>${currentCar.description}</p>
                          <h4>${currentCarAvailibility}</h4>`;
