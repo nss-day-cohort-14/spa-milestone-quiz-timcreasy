@@ -82,9 +82,3 @@ function carCardClicked() {
   CarLot.setStyling(currentCarCard, "#F5F5F5");
 
 }
-
-
-
-
-
-

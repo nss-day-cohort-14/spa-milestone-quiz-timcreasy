@@ -1,9 +1,3 @@
-// REQUIREMENT:
-
-  // The first IIFE should add a public function (e.g. loadInventory) that loads the inventory.json file and stores the inventory in a private variable. 
-  // It should also expose a public getter to read the array of cars (e.g. getInventory).
-
-
 // CarLot IFFE
 var CarLot = (function() {
 
@@ -12,8 +6,17 @@ var CarLot = (function() {
 
   return {
 
+    // setInventory method
+    setInventory: function(carInventory) {
+      // Loop through each car and add to inventory array
+      for (let i = 0; i < carInventory.cars.length; i++) {
+        // Add current car to inventory array
+        inventory.push(carInventory.cars[i]);
+      }
+    },
+
     // loadInventory method
-    loadInventory: function() {
+    loadInventory: function(callback) {
       // Create XMLHttpRequest Object
       var xmlHttp = new XMLHttpRequest();
       // Check onreadystatechange
@@ -22,13 +25,10 @@ var CarLot = (function() {
         if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
           // Get data from inventory.json and parse
           var inventoryParsedData = JSON.parse(xmlHttp.responseText);
-          // Loop through each car and add to inventory array
-          for (let i = 0; i < inventoryParsedData.cars.length; i++) {
-            // Add current car to inventory array
-            inventory.push(inventoryParsedData.cars[i]);
-          }
+          // Add cars to array
+          CarLot.setInventory(inventoryParsedData);
           // Callback invocation after data loaded
-          populatePage();
+          callback();
         }
       };
       // Open request to get inventory
