@@ -1,0 +1,31 @@
+{
+  "cars": [
+    {
+      "make": "Hyundai",
+      "model": "Elantra",
+      "year": "2013",
+      "price": "11499",
+      "color": "Red",
+      "purchased": false,
+      "description": "This is a one of a kind Hyundai Elantra.  This vehicle has power everything, clean, and has low mileage."
+    },
+    {
+      "make": "Mazda",
+      "model": "3",
+      "year": "2009",
+      "price": "8999",
+      "color": "Grey",
+      "purchased": true,
+      "description": "A like new Mazda 3, waiting for a new master.  Tame this beast for the low price of $8999."
+    },
+    {
+      "make": "Acura",
+      "model": "Integra",
+      "year": "1991",
+      "price": "2599",
+      "color": "Black",
+      "purchased": false,
+      "description": "A timeless classic, this car can be yours for the right price."      
+    }
+  ]
+}
